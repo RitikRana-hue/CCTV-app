@@ -1,0 +1,370 @@
+/* Camera Card Styles */
+.cameraCard {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cameraCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  border-color: #3b82f6;
+}
+
+.cameraHeader {
+  padding: 1rem;
+  border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cameraInfo {
+  flex: 1;
+}
+
+.cameraName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+}
+
+.cameraMeta {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.cameraActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  background: #374151;
+  color: #ffffff;
+  border: 1px solid #4b5563;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+.actionButton.primary {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.actionButton.primary:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.cameraVideoContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  background: #000000;
+  overflow: hidden;
+}
+
+.videoPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.videoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.placeholderIcon {
+  width: 64px;
+  height: 64px;
+  background: #374151;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #6b7280;
+}
+
+.placeholderText {
+  text-align: center;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* Video Player Specific Styles */
+.videoControls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.videoContainer:hover .videoControls {
+  opacity: 1;
+}
+
+.controlButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.controlButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Loading States */
+.videoLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+}
+
+.videoSpinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+/* Error States */
+.videoError {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ef4444;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+}
+
+.errorIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.errorTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.errorMessage {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .cameraCard {
+    border-radius: 0.5rem;
+  }
+
+  .cameraHeader {
+    padding: 0.75rem;
+  }
+
+  .cameraName {
+    font-size: 1rem;
+  }
+
+  .actionButton {
+    padding: 0.375rem 0.625rem;
+    font-size: 0.6875rem;
+  }
+}
+
+/* Delete Button Styles */
+.actionButton.danger {
+  background: #dc2626;
+  border-color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionButton.danger:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+/* Delete Confirmation Modal */
+.deleteModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.deleteModalContent {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.deleteModalHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.deleteModalHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.deleteModalText {
+  color: #d1d5db;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.deleteModalText strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.deleteModalActions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  background: #374151;
+  color: #ffffff;
+  border: 1px solid #4b5563;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+.cancelButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deleteButton {
+  background: #dc2626;
+  color: #ffffff;
+  border: 1px solid #dc2626;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.deleteButton:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.deleteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.retryButton {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.retryButton:hover {
+  background: #2563eb;
+}

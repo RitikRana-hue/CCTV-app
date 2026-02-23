@@ -1,0 +1,6 @@
+name,rtspUrl,enabled
+Front Door Camera,rtsp://admin:password@192.168.1.100:554/stream1,true
+Back Entrance Camera,rtsp://admin:password@192.168.1.101:554/stream1,true
+Parking Lot Camera,rtsp://admin:password@192.168.1.102:554/stream1,false
+Garage Camera,rtsp://admin:password@192.168.1.103:554/stream1,false
+Living Room Camera,rtsp://admin:password@192.168.1.104:554/stream1,false

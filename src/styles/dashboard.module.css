@@ -1,0 +1,195 @@
+/* Dashboard Layout Styles */
+.dashboardContainer {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.systemTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.mainContent {
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.pageSubtitle {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Camera Grid Styles */
+.cameraGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cameraGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cameraGrid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+}
+
+@media (min-width: 1800px) {
+  .cameraGrid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+}
+
+/* Loading and Error States */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #6b7280;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #2a2a2a;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 3rem;
+  color: #ef4444;
+}
+
+.errorMessage {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.retryButton {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.retryButton:hover {
+  background: #2563eb;
+}
+
+/* Status Indicators */
+.statusIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.statusOnline {
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+.statusOffline {
+  background: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+.statusStreaming {
+  background: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
